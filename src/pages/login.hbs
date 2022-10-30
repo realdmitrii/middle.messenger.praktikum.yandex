@@ -1,0 +1,41 @@
+{{!< desktop }}
+<div class="main">
+  <div class="container container_narrow">
+    <h1 class="container__header">Авторизация</h1>
+    
+    <form name="form" action="./chat.hbs" method="get">
+
+      <div class="container__element">
+        
+        <label for="login" class="form__input__label"></label>
+        <input
+          name="login"
+          type="text"
+          class="form__input__field form__input__field_standard"
+          value oninput="this.setAttribute('value', this.value);"
+        />
+        <label class="form__input__label">Логин</label>
+      </div>
+      
+     
+      <div class="container__element">
+        <label for="password" class="form__input__label"></label>
+        <input 
+        name="password" 
+        type="password" 
+        class="form__input__field form__input__field_standard" 
+        value oninput="this.setAttribute('value', this.value);"
+        />
+        <label class="form__input__label">Пароль</label>
+      </div>
+    </form>
+<br>
+<br>
+    <div class="container__element container__element_centered">
+    <a href="chat.hbs" class="form__button form__button_standard">Войти</a>
+    </div>
+    <div class="container__element container__element_centered">
+    <a href="reg.hbs" class="container__link">Зарегистрироваться</a>
+    </div>
+  </div>  
+</div>

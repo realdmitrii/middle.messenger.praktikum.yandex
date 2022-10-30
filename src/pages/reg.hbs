@@ -1,0 +1,37 @@
+{{!< desktop }}
+<div class="main">
+  <div class="container container_narrow">
+    <h1 class="container__header">Регистрация</h1>
+    
+    <form name="reg" action="./chat.hbs">
+
+      <ul class="container__element">
+        {{#each reg}}
+            {{#each inputs}}
+                <li class="container__element">
+                    <label for="{{for}}" class="form__input__label"></label>
+                    <input 
+                    name="{{name}}" 
+                    type="{{type}}" 
+                    class="form__input__field form__input__field_standard" 
+                    value oninput="this.setAttribute('value', this.value);"
+                    />
+                    <label class="form__input__label">{{label}}</label>
+                </li>
+            {{/each}}
+        {{/each}}
+      </ul>
+ 
+    </form>
+<br>
+<br>
+
+    <div class="container__element container__element_centered">
+    <a href="chat.hbs" class="form__button form__button_standard">Зарегистрироваться</a>
+    </div>
+    <div class="container__element container__element_centered">
+    <a href="login.hbs" class="container__link">Войти</a>
+    </div>
+  </div>  
+</div>
+

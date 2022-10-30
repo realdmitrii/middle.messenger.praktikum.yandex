@@ -1,0 +1,49 @@
+{
+    "reg": {
+        
+        "inputs": [      
+         {     
+        "for" : "email",
+        "name" : "email",
+        "type" : "email",   
+        "label" : "Почта"
+        },
+        {     
+        "for" : "login",
+        "name" : "login",
+        "type" : "text",
+        "label" : "Логин"
+        },
+          {     
+        "for" : "first_name",
+        "name" : "first_name",
+        "type" : "text",
+        "label" : "Имя"
+        },
+          {     
+        "for" : "second_name",
+        "name" : "second_name",
+        "type" : "text",
+        "label" : "Фамилия"
+        },
+        {     
+        "for" : "phone",
+        "name" : "phone",
+        "type" : "tel",
+        "label" : "Телефон"
+        },
+          {     
+        "for" : "password",
+        "name" : "password",
+        "type" : "password",
+        "label" : "Пароль"
+        },
+          {     
+        "for" : "checkpass",
+        "name" : "checkpass",
+        "type" : "password",
+        "label" : "Пароль (еще раз)"
+        }
+        ]
+    }
+  }
