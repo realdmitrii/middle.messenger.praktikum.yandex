@@ -1,6 +1,6 @@
 # Чат волчат spint 2
-https://img.shields.io/badge/status-production-brightgreen
-https://img.shields.io/badge/yandex-practicum-yellow
+(https://img.shields.io/badge/status-production-brightgreen)
+(https://img.shields.io/badge/yandex-practicum-yellow)
 
 ## Описание
 Учебный проект, в разработке
@@ -14,16 +14,12 @@ https://img.shields.io/badge/yandex-practicum-yellow
 https://www.figma.com/file/jF5fFFzgGOxQeB4CmKWTiE/Chat_external_link?node-id=0%3A1
 
 
-=======
-### Ветка, в которой делаете задания спринта, должна называться sprint_i, где i - номер спринта. Не переименовывайте её.
 
-### Откройте pull request в ветку main из ветки, где вы разрабатывали проект, и добавьте ссылку на этот pr в README.md в ветке main. 
-### ВАЖНО: pull request должен называться “Sprint i” (i — номер спринта).
 
-### Например, задания для проектной работы во втором спринте вы делаете в ветке sprint_2. Открываете из неё pull request в ветку main. Ссылку на этот pr добавляете в README.md в ветке main. После этого на платформе Практикума нажимаете «Проверить задание».
 
-### Также не забудьте проверить, что репозиторий публичный.
----
+======= Служебная информация =========
+
+Например, задания для проектной работы во втором спринте вы делаете в ветке sprint_2. Открываете из неё pull request в ветку main. Ссылку на этот pr добавляете в README.md в ветке main. После этого на платформе Практикума нажимаете «Проверить задание».
 
 
 Даже законченный проект остаётся только заготовкой, пока им не начнут пользоваться. Но сначала пользователь должен понять, зачем ему пользоваться вашим кодом. В этом помогает файл README.
