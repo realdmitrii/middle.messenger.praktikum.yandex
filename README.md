@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# Чат волчат
+# Чат волчат spint 2
 https://img.shields.io/badge/status-production-brightgreen
 https://img.shields.io/badge/yandex-practicum-yellow
 
