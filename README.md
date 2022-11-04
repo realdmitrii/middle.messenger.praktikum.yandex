@@ -1,6 +1,6 @@
 # Чат волчат spint 2
-[In process](https://img.shields.io/badge/status-production-brightgreen)
-[Ya](https://img.shields.io/badge/yandex-practicum-yellow)
+![In process](https://img.shields.io/badge/status-production-brightgreen)
+![Ya](https://img.shields.io/badge/yandex-practicum-yellow)
 
 ## Описание
 Учебный проект, в разработке
