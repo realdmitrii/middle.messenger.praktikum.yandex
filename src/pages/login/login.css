@@ -1,3 +1,5 @@
+@import "../../styles/var.css";
+
 .login {
   display: flex;
   flex-direction: column;

@@ -1,0 +1,61 @@
+@import "../../styles/var.css";
+
+.message-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2vh;
+  width: auto;
+  & div:last-child {
+    margin-bottom: 3px;
+  }
+
+  &__time,
+  &__message_shape_taken,
+  &__message_shape_sended,
+  &__emoji {
+    padding: 5px;
+  }
+
+  &__time {
+    width: fit-content;
+    font-size: $description_font-size;
+    border-radius: 8px 8px 0 0;
+  }
+
+  &__message_shape_taken,
+  &__message_shape_sended {
+    max-width: 75%;
+    width: fit-content;
+    font-size: $message_font-size;
+  }
+
+  &__message_shape_taken {
+    border-radius: 0 8px 8px 0;
+  }
+
+  &__message_shape_sended {
+    border-radius: 8px 0 0 8px;
+  }
+
+  &__emoji {
+    width: fit-content;
+    border-radius: 0 0 8px 8px;
+  }
+
+  &__flex-align_right {
+    align-items: flex-end;
+  }
+
+  &_taken {
+    color: $chat-message-taken_color;
+    background: $chat-message-taken_background;
+    box-shadow: $chat-message-taken_box-shadow;
+  }
+
+  &_sended {
+    margin-right: 7px;
+    color: $chat-message-sended_color;
+    background: $chat-message-sended_background;
+    box-shadow: $chat-message-sended_box-shadow;
+  }
+}

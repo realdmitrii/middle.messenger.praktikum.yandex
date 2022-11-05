@@ -1,0 +1,99 @@
+<div class="profile">
+  <button name="avatar" type="button" class="profile__avatar"></button>
+  <div class="profile__warning"></div>
+
+  <form name="form" action="" method="get" class="profile__form">
+    <div class="profile__input_wrapper">
+      <label for="login" class="profile__description">Логин</label>
+      {{{Input
+        name="login"
+        type="text"
+        class="profile__input input"
+        autocomplete="user-name"
+        onFocus=onFocus
+        onBlur=onBlur
+      }}}
+    </div>
+
+    <div class="profile__input_wrapper">
+      <label for="first_name" class="profile__description">Имя</label>
+      {{{Input
+        name="first_name"
+        type="text"
+        class="profile__input input"
+        autocomplete="given-name"
+        onFocus=onFocus
+        onBlur=onBlur
+      }}}
+    </div>
+
+    <div class="profile__input_wrapper">
+      <label for="second_name" class="profile__description">Фамилия</label>
+      {{{Input
+        name="second_name"
+        type="text"
+        class="profile__input input"
+        autocomplete="family_name"
+        onFocus=onFocus
+        onBlur=onBlur
+      }}}
+    </div>
+
+    <div class="profile__input_wrapper">
+      <label for="display_name" class="profile__description">Отображаемое имя</label>
+      {{{Input
+        name="display_name"
+        type="text"
+        class="profile__input input"
+        autocomplete="nickname"
+        onFocus=onFocus
+        onBlur=onBlur
+      }}}
+    </div>
+
+    <div class="profile__input_wrapper">
+      <label for="phone" class="profile__description">Номер телефона</label>
+      {{{Input
+        name="phone"
+        type="phone"
+        class="profile__input input"
+        autocomplete="tel"
+        onFocus=onFocus
+        onBlur=onBlur
+      }}}
+    </div>
+
+    <div class="profile__input_wrapper profile__input_wrapper_last">
+      <label for="email" class="profile__description">Почта</label>
+      {{{Input
+        name="email"
+        type="email"
+        class="profile__input input"
+        autocomplete="email"
+        onFocus=onFocus
+        onBlur=onBlur
+      }}}
+    </div>
+  </form>
+
+  <div class="profile__buttons-wrapper">
+    {{{Link
+      href="chat"
+      class="button-link profile_margin_top"
+      text="Сохранить изменения"
+      onClick=save
+    }}}
+    {{{Link
+      href="password-change"
+      class="button-link profile__margin_top"
+      text="Изменить пароль"
+      onClick=goToPasswordChangePage
+    }}}
+    {{{Link
+      href="chat"
+      class="button-link profile__margin_top"
+      text="Вернуться назад"
+      onClick=cancel
+    }}}
+  </div>
+</div>

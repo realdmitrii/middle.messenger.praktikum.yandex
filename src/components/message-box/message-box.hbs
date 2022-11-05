@@ -1,0 +1,21 @@
+<div class="message-box{{{flexAlignRight}}}">
+  <div class="message-box__time message-box_{{{takenSended}}}">{{time}}</div>
+
+  {{#if taken}}
+    {{#each arrayMessages}}
+      <div class="message-box__message_shape_taken message-box_taken">
+        {{this}}</div>
+    {{/each}}
+  {{else}}
+    {{#each arrayMessages}}
+      <div class="message-box__message_shape_sended message-box_sended">
+        {{this}}</div>
+    {{/each}}
+  {{/if}}
+
+  {{#if reaction}}
+    <div
+      class="message-box__emoji message-box_{{{takenSended}}}"
+    >{{{reaction}}}</div>
+  {{/if}}
+</div>

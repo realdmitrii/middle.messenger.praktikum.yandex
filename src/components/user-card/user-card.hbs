@@ -1,0 +1,28 @@
+<div class="user-card">
+  <img class="user-card__avatar {{online}}" src="{{avatarSrc}}" alt="avatar" />
+
+  <div class="user-card__user-info">
+    <div class="user-card__user-info_display-name">
+      {{displayName}}
+    </div>
+
+    {{#if lastMessage}}
+      <div class="user-card__user-info_last-message">
+        {{lastMessage}}
+      </div>
+    {{/if}}
+  </div>
+
+  <div class="user-card__overall-info">
+    {{#if activeTime}}
+      <time class="user-card__overall-info_time">
+        {{{activeTime}}}
+      </time>
+    {{/if}}
+    {{#if receivedMessages}}
+      <div class="user-card__overall-info_messages-number">
+        {{receivedMessages}}
+      </div>
+    {{/if}}
+  </div>
+</div>

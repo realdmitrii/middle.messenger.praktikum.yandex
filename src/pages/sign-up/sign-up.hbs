@@ -1,0 +1,125 @@
+<div class="main">
+  <div class="container container_narrow">
+  <h1 class="container__header">Регистрация</h1>
+      <div class="container__element">
+      <div class="sign-up__warning"></div>
+      </div>
+
+  <form name="reg" action="" method="get" class="container__element">
+    <ul class="container__element">
+    <li class="container__element">
+      <label for="login" class="form__input__label">Логин</label>
+      {{{Input
+        name="login"
+        type="text"
+        class="form__input__field form__input__field_standard"
+        autocomplete="username"
+        onFocus=onFocus
+        onBlur=onBlur
+      }}}
+    </li>
+
+    <li class="container__element">
+      <label for="first_name" class="form__input__label">Имя</label>
+      {{{Input
+        name="first_name"
+        type="text"
+        class="form__input__field form__input__field_standard"
+        autocomplete="given-name"
+        onFocus=onFocus
+        onBlur=onBlur
+      }}}
+    </li>
+
+    <li class="container__element">
+      <label for="second_name" class="form__input__label">Фамилия</label>
+      {{{Input
+        name="second_name"
+        type="text"
+        class="form__input__field form__input__field_standard"
+        autocomplete="family-name"
+        onFocus=onFocus
+        onBlur=onBlur
+      }}}
+    </li>
+
+    <li class="container__element">
+      <label for="display_name" class="form__input__label">Отображаемое имя</label>
+      {{{Input
+        name="display_name"
+        type="text"
+        class="form__input__field form__input__field_standard"
+        autocomplete="nickname"
+        onFocus=onFocus
+        onBlur=onBlur
+      }}}
+    </li>
+
+    <li class="container__element">
+      <label for="phone" class="form__input__label">Номер телефона</label>
+      {{{Input
+        name="phone"
+        type="phone"
+        class="form__input__field form__input__field_standard"
+        autocomplete="tel"
+        onFocus=onFocus
+        onBlur=onBlur
+      }}}
+    </li>
+
+    <li class="container__element">
+      <label for="email" class="form__input__label">Почта</label>
+      {{{Input
+        name="email"
+        type="email"
+        class="form__input__field form__input__field_standard"
+        autocomplete="email"
+        onFocus=onFocus
+        onBlur=onBlur
+      }}}
+    </li>
+
+    <li class="container__element">
+      <label for="password" class="form__input__label">Пароль</label>
+      {{{Input
+        name="password"
+        type="password"
+        class="form__input__field form__input__field_standard"
+        autocomplete="new-password"
+        onFocus=onFocus
+        onBlur=onBlur
+      }}}
+    </li>
+
+    <li class="container__element">
+      <label for="password_again" class="form__input__label">Пароль (повторно)</label>
+      {{{Input
+        name="password_again"
+        type="password"
+        class="form__input__field form__input__field_standard"
+        autocomplete="new-password"
+        onFocus=onFocus
+        onBlur=onBlur
+      }}}
+    </li>
+    </ul>
+  </form>
+
+      <div class="container__element container__element_centered">
+          {{{Link
+            href="chat"
+            class="form__button form__button_standard"
+            text="Зарегистрироваться"
+            onClick=signUp
+          }}}
+      </div>    
+      <div class="container__element container__element_centered">
+          {{{Link
+            href="sign-in"
+            class="container__link"
+            text="Войти"
+            onClick=signIn
+          }}}
+      </div>
+  </div>
+</div>

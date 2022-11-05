@@ -1,0 +1,44 @@
+<div class="main">
+  <div class="container container_narrow"> 
+    <h1 class="container__header"> Pages list</h1>
+    <ul class="container__element container__element_centered"></ul>
+    
+    <li class="container__element container__element_centered">
+    {{{Link
+        href="login"
+        class="form__button form__button_standard"
+        text="Вход"
+        onClick=goToSignInPage
+    }}}
+    </li>
+    
+    <li class="container__element container__element_centered">
+    {{{Link
+        href="error"
+        class="form__button form__button_standard"
+        text="Ошибка 404"
+        onClick=goToErrorPage404
+    }}}
+    </li>
+
+    <li class="container__element container__element_centered">
+    {{{Link
+        href="error"
+        class="form__button form__button_standard"
+        text="Ошибка 500"
+        onClick=goToErrorPage500
+    }}}  
+    </li>
+      
+    <li class="container__element container__element_centered">
+    {{{Link
+        href="sign-up"
+        class="form__button form__button_standard"
+        text="Зарегистрироваться"
+        onClick=signUp
+    }}}
+    </li>
+      
+    </ul>
+    </div>
+</div>

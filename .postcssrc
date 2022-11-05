@@ -1,6 +1,7 @@
 {
   "plugins": {
     "postcss-import": true,
-    "postcss-simple-vars": true
+    "postcss-simple-vars": true,
+    "postcss-nested": true
   }
 }

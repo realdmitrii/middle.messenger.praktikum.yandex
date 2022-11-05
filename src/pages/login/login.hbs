@@ -1,0 +1,68 @@
+<div class="main">
+  <div class="container container_narrow">
+    <h1 class="container__header">Авторизация</h1>
+    <div class="sign-in__warning"></div>
+    <form name="form" action="/chat" method="get">
+
+      <div class="container__element">
+        <label for="login" class="form__input__label"></label>
+        {{{Input
+        name="login"
+        type="text"
+        class="form__input__field form__input__field_standard"
+        autocomplete="username"
+        onFocus=onFocus
+        onBlur=onBlur
+        }}}
+        {{!-- <input
+           value oninput="this.setAttribute('value', this.value);"
+        /> --}}
+        <label class="form__input__label">Логин</label>
+      </div>
+      
+     
+      <div class="container__element">
+        <label for="password" class="form__input__label"></label>
+        {{{Input
+        name="password"
+        type="password"
+        class="form__input__field form__input__field_standard"
+        autocomplete="current-password"
+        onFocus=onFocus
+        onBlur=onBlur
+        }}}
+        {{!-- <input 
+        value oninput="this.setAttribute('value', this.value);"
+        /> --}}
+        <label class="form__input__label">Пароль</label>
+      </div>
+    </form>
+    <div class="container__element">
+  {{{Link
+    href="chat"
+    class="form__button form__button_standard"
+    text="Войти"
+    onClick=signIn
+  }}}
+</div>
+  <div class="container__element">
+  {{{Link
+    href="sign-up"
+    class="form__button form__button_standard"
+    text="Зарегистрироваться"
+    onClick=signUp
+  }}}
+  </div>
+    <div class="container__element container__element_centered">
+    {{!-- <a href="chat.hbs" class="form__button form__button_standard">Войти</a> --}}
+    </div>
+    <div class="container__element container__element_centered">
+      {{{Link
+        href=""
+        class="container__link"
+        text="Вернуться назад"
+        onClick=goToIndexPage
+      }}}
+    </div>
+  </div>  
+</div>
