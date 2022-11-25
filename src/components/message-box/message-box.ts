@@ -4,7 +4,7 @@ import { Block } from "../../core/Block";
 
 interface Props {
   taken: boolean;
-  time: string;
+  time: Date;
   arrayMessages: string[];
   reaction: string;
 }
@@ -14,11 +14,11 @@ export class MessageBox extends Block {
     super({ ...props });
   }
 
-  private _classModifier1(): string {
+  private _classModifierWhose(): string {
     return this.props.taken ? "" : " message-box__flex-align_right";
   }
 
-  private _classModifier2(): string {
+  private _classModifierSend(): string {
     return this.props.taken ? "taken" : "sended";
   }
 
@@ -28,8 +28,8 @@ export class MessageBox extends Block {
       time: this.props.time,
       arrayMessages: this.props.arrayMessages,
       reaction: this.props.reaction,
-      flexAlignRight: this._classModifier1(),
-      takenSended: this._classModifier2()
+      flexAlignRight: this._classModifierWhose(),
+      takenSended: this._classModifierSend()
     });
   }
 }

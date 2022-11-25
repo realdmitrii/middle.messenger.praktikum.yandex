@@ -1,27 +1,16 @@
-export enum METHODS {
-  GET = "GET",
-  PUT = "PUT",
-  POST = "POST",
-  DELETE = "DELETE"
-}
+export type METHODS =   "GET" | "PUT" | "POST" | "DELETE";
 
 interface Options {
-  method: string;
+  method: METHODS;
   headers: Record<string, string>;
-  data: string;
-  timeout: number;
+  data: undefined;
 }
 
 function queryStringify(data: any): string {
-  let outcome = "?";
-  Object.keys(data).forEach((key, i, arr) => {
-    outcome += `${key}=${data[key]}`;
-    if (arr.length > 1 && i !== arr.length - 1) {
-      outcome += `&`;
-    }
-  });
-
-  return outcome;
+  return "?" + Object
+  .entries(data)
+  .map(([key, value]) => `${key}=${value}`)
+  .join("&")
 }
 
 export class HTTPTransport {
@@ -30,33 +19,29 @@ export class HTTPTransport {
 
     return this.request(
       `${url}${transformedUrl}`,
-      { ...options, method: METHODS.GET },
-      options.timeout
+      { ...options, method: "GET" }
     );
   };
 
   post = (url: string, options: Options) => {
     return this.request(
       url,
-      { ...options, method: METHODS.POST },
-      options.timeout
+      { ...options, method: "POST" }
     );
   };
 
   put = (url: string, options: Options) => {
     return this.request(
       url,
-      { ...options, method: METHODS.PUT },
-      options.timeout
+      { ...options, method: "PUT" }
     );
   };
 
   delete = (url: string, options: Options) => {
     return this.request(
       url,
-      { ...options, method: METHODS.DELETE },
-      options.timeout
-    );
+      { ...options, method: "DELETE" }
+      );
   };
 
   request = (url: string, options: Options, timeout = 5000) => {
@@ -82,7 +67,7 @@ export class HTTPTransport {
       xhr.timeout = timeout;
       xhr.ontimeout = reject;
 
-      if (method === METHODS.GET || !data) {
+      if (method === "GET" || !data) {
         xhr.send();
       } else {
         xhr.send(data);

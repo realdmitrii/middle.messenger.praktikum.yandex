@@ -12,13 +12,10 @@ export class Avatar extends Block {
     super({ ...props });
   }
 
-  private _online(): string {
-    return this.props.online ? "online" : "offline";
-  }
 
   render() {
     return this.compile(template, {
-      online: this._online(),
+      online: this.props.online ? "online" : "offline",
       imgSrc: this.props.imgSrc
     });
   }

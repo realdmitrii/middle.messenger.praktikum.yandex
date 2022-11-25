@@ -4,7 +4,7 @@ import { Block } from "../../core/Block";
 
 interface Props {
   name?: string;
-  type?: string;
+  type?: "string" | "number" | "email" | "tel" | "password";
   class?: string;
   autocomplete: string;
   pattern?: string;

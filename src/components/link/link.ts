@@ -5,7 +5,7 @@ import { Block } from "../../core/Block";
 interface Props {
   class: string;
   text: string;
-  onClick?: () => void;
+  onClick?: (e: MouseEvent) => void;
 }
 
 export class Link extends Block {

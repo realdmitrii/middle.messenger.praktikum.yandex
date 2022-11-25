@@ -5,8 +5,11 @@ import usersData from "../../data/users.json";
 
 export class ChatBox extends Block {
   render() {
+
+    const _usersData = usersData[0]?.chatBox
+
     return this.compile(template, {
-      usersData: usersData[0]["chatBox"]
+      usersData: _usersData
     });
   }
 }
