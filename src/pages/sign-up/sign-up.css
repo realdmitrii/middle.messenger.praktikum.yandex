@@ -1,0 +1,61 @@
+@import '../../styles/variables.css';
+
+.sign-up {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  gap: 10px;
+  background: $initial_background;
+  user-select: none;
+
+  &__title {
+    color: $input_color;
+  }
+
+  &__warning {
+    text-align: center;
+    width: 400px;
+    margin-top: -6px;
+    font-size: $description_font-size;
+    color: hsl(0, 70%, 50%);
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__wrapper_inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px 0 10px 0;
+    border-top: 2px solid $line_color;
+    border-bottom: 2px solid $line_color;
+  }
+
+  &__description {
+    color: $input_color;
+    font-size: $description_font-size;
+    margin: 0 0 2px 8px;
+  }
+
+  &__wrapper_input {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__wrapper_buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,47 @@
+@import '../../styles/variables.css';
+
+.modal {
+  &__container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: hsl(200, 46%, 18%);
+
+    border-radius: 10px;
+    user-select: none;
+    transition: all 0.2s linear;
+    z-index: 10;
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(2px);
+    background-color: hsla(0, 0%, 0%, 0.5);
+    cursor: pointer;
+    transition: all 0.2s linear;
+    z-index: 1;
+  }
+
+  &__button_close {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 49px;
+    height: 49px;
+    background-color: transparent;
+    background-size: cover;
+    border-style: none;
+    background-image: url('../../assets/images/icons/close.svg');
+    cursor: pointer;
+    transition: transform 0.1s linear;
+  }
+
+  &__button_close:hover {
+    transform: scale(1.1);
+  }
+}

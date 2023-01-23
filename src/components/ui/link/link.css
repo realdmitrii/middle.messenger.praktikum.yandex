@@ -1,0 +1,7 @@
+@import '../../../styles/variables.css';
+
+.link {
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}

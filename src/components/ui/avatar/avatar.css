@@ -1,0 +1,15 @@
+.avatar {
+  width: 70px;
+  height: 70px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  user-select: none;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.avatar img {
+  width: 100%;
+}

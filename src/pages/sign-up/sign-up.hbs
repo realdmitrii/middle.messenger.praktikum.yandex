@@ -1,0 +1,119 @@
+<div class="sign-up">
+  <h1 class="sign-up__title">Регистрация</h1>
+  <div class="sign-up__warning warning"></div>
+
+  <form class="sign-up__form">
+    <div class="sign-up__wrapper_inputs">
+      <div class="sign-up__wrapper_input">
+        <label for="login" class="sign-up__description">Логин</label>
+        {{{Input
+          name="login"
+          type="text"
+          class="sign-up__input input"
+          autocomplete="username"
+          value="realdmitrii"
+          onFocus=focus
+          onBlur=blur
+        }}}
+      </div>
+
+      <div class="sign-up__wrapper_input">
+        <label for="first_name" class="sign-up__description">Имя</label>
+        {{{Input
+          name="first_name"
+          type="text"
+          class="sign-up__input input"
+          autocomplete="given-name"
+          value="Dmitrii"
+          onFocus=focus
+          onBlur=blur
+        }}}
+      </div>
+
+      <div class="sign-up__wrapper_input">
+        <label for="second_name" class="sign-up__description">Фамилия</label>
+        {{{Input
+          name="second_name"
+          type="text"
+          class="sign-up__input input"
+          autocomplete="family-name"
+          value="Popov"
+          onFocus=focus
+          onBlur=blur
+        }}}
+      </div>
+
+      <div class="sign-up__wrapper_input">
+        <label for="display_name" class="sign-up__description">Отображаемое имя</label>
+        {{{Input
+          name="display_name"
+          type="text"
+          class="sign-up__input input"
+          autocomplete="nickname"
+          value="DimON"
+          onFocus=focus
+          onBlur=blur
+        }}}
+      </div>
+
+      <div class="sign-up__wrapper_input">
+        <label for="phone" class="sign-up__description">Номер телефона</label>
+        {{{Input
+          name="phone"
+          type="phone"
+          class="sign-up__input input"
+          autocomplete="tel"
+          value="+79028017667"
+          onFocus=focus
+          onBlur=blur
+        }}}
+      </div>
+
+      <div class="sign-up__wrapper_input">
+        <label for="email" class="sign-up__description">Почта</label>
+        {{{Input
+          name="email"
+          type="email"
+          class="sign-up__input input"
+          autocomplete="email"
+          value="middl@yandex.ru"
+          onFocus=focus
+          onBlur=blur
+        }}}
+      </div>
+
+      <div class="sign-up__wrapper_input">
+        <label for="password" class="sign-up__description">Пароль</label>
+        {{{Input
+          name="password"
+          type="password"
+          class="sign-up__input input"
+          autocomplete="new-password"
+          value="12345678"
+          onFocus=focus
+          onBlur=blur
+        }}}
+      </div>
+
+      <div class="sign-up__wrapper_input">
+        <label for="password_again" class="sign-up__description">Пароль
+          (повторно)</label>
+        {{{Input
+          name="password_again"
+          type="password"
+          class="sign-up__input input"
+          autocomplete="new-password"
+          value="12345678"
+          onFocus=focus
+          onBlur=blur
+        }}}
+      </div>
+    </div>
+
+    <div class="sign-up__wrapper_buttons">
+      {{{Button type="submit" value="Зарегистрироваться" onClick=signUp}}}
+      {{{Button type="button" value="Войти" onClick=goToSignInPage}}}
+    </div>
+  </form>
+
+</div>

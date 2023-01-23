@@ -1,0 +1,13 @@
+{{#if icon}}
+  {{#if negativeIndex}}
+    <button type="button" class="{{class}}" tabindex="-1">{{value}}</button>
+  {{else}}
+    <button type="button" class="{{class}}">{{value}}</button>
+  {{/if}}
+{{else}}
+  {{#if class}}
+    <button type="{{type}}" class="{{class}} button">{{value}}</button>
+  {{else}}
+    <button type="{{type}}" class="button">{{value}}</button>
+  {{/if}}
+{{/if}}

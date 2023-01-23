@@ -1,0 +1,39 @@
+<div class="sign-in">
+  <h1 class="sign-in__title">Вход</h1>
+
+  <div class="sign-in__warning warning"></div>
+
+  <form class="sign-in__form">
+    <div class="sign-in__wrapper_inputs">
+      <div class="sign-in__wrapper_input">
+        <label for="login" class="sign-in__icon_user svg"></label>
+        {{{Input
+          name="login"
+          type="text"
+          class="sign-in__input input"
+          autocomplete="username"
+          value=login
+          onFocus=focus
+          onBlur=blur
+        }}}
+      </div>
+
+      <div class="sign-in__wrapper_input">
+        <label for="password" class="sign-in__icon_password svg"></label>
+        {{{Input
+          name="password"
+          type="password"
+          class="sign-in__input input"
+          autocomplete="current-password"
+          onFocus=focus
+          onBlur=blur
+        }}}
+      </div>
+    </div>
+
+    <div class="sign-in__wrapper_buttons">
+      {{{Button type="submit" value="Войти" onClick=signIn}}}
+      {{{Button type="button" value="Зарегистрироваться" onClick=goToSignUpPage}}}
+    </div>
+  </form>
+</div>

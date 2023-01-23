@@ -1,0 +1,54 @@
+/* Шрифты */
+$message_font-size: 26px;
+$text_font-size: 24px;
+$description_font-size: 16px;
+
+/* Основные */
+$initial_background: linear-gradient(
+  150deg,
+  hsl(0, 0%, 100%),
+  hsl(200, 100%, 90%)
+);
+$line_color: hsl(200, 72%, 70%);
+$line_background: hsl(200, 72%, 70%);
+
+$box-shadow-1: inset 2px 2px 4px hsl(200, 70%, 50%, 0.75);
+$box-shadow-2: inset -2px -2px 7px hsl(200, 70%, 50%, 1);
+$box-shadow-3: 4px 4px 7px hsl(200, 70%, 50%, 1);
+$box-shadow-4: inset 4px 4px 7px hsl(200, 70%, 50%, 0.75);
+$box-shadow-5: inset -2px -2px 4px hsl(200, 70%, 50%, 1);
+$box-shadow-6: 3px 3px 5px hsl(200, 70%, 50%, 1);
+
+/* Поле ввода */
+$input_color: hsl(200, 50%, 15%);
+$input_background: hsl(0, 0%, 100%);
+$input_box-shadow: inset 2px 2px 4px hsla(0, 0%, 0%, 0.55);
+
+/* Полоса прокрутки */
+$scrollbar-track_background: $line_color;
+$scrollbar-thumb_background: hsl(220, 90%, 60%);
+
+/* Чат */
+$chat_background: hsl(200, 100%, 99%);
+
+$chat-message-taken_background: hsl(212, 42%, 60%);
+$chat-message-taken_color: hsl(212, 42%, 15%);
+$chat-message-taken_box-shadow: 2px 2px 4px hsla(212, 42%, 55%, 0.55);
+
+$chat-message-sended_background: hsl(200, 42%, 80%);
+$chat-message-sended_color: hsl(200, 42%, 15%);
+$chat-message-sended_box-shadow: 2px 2px 4px hsla(190, 42%, 55%, 0.55);
+
+/* Карточка чата */
+$chat-card_background: hsl(200, 42%, 80%);
+$chat-card_box-shadow: 2px 2px 4px hsl(200, 70%, 50%, 0.55);
+$chat-card_border-color: hsl(200, 100%, 40%);
+
+$online_background: hsl(180, 70%, 70%);
+$offline_background: hsl(360, 70%, 80%);
+
+$display-name_color: $input_color;
+$last-message_color: hsl(211, 45%, 54%);
+
+$overall-info_color: hsl(200, 90%, 80%);
+$overall-info_background: hsl(200, 28%, 70%);

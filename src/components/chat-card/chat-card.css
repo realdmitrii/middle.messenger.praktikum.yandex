@@ -1,0 +1,87 @@
+@import '../../styles/variables.css';
+
+.chat-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 485px;
+  height: 80px;
+  padding: 10px;
+  margin-right: 10px;
+  background: $chat-card_background;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  box-shadow: $chat-card_box-shadow;
+  cursor: pointer;
+  gap: 10px;
+
+  &:active {
+    transform: scale(0.99);
+  }
+
+  &:hover {
+    border: 2px solid $chat-card_border-color;
+  }
+
+  &__button_settings {
+    width: 20px;
+    background-image: url('../../assets/images/icons/settings.svg');
+    cursor: pointer;
+    transition: all 0.1s linear;
+  }
+
+  &__button_settings:hover {
+    transform: scale(1.4);
+  }
+
+  &__chat-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 340px;
+    height: 70px;
+    gap: 2px;
+
+    &_display-name {
+      color: $display-name_color;
+      font-size: $text_font-size;
+    }
+
+    &_last-message {
+      display: flex;
+      align-items: center;
+      height: 40px;
+      font-size: $description_font-size;
+      color: $last-message_color;
+      overflow: hidden;
+    }
+  }
+
+  &__overall-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 50px;
+    color: $overall-info_color;
+    font-size: $description_font-size;
+    gap: 5px;
+    user-select: none;
+
+    &_time {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2px 6px 2px 6px;
+      background: $overall-info_background;
+      border-radius: 10px;
+    }
+
+    &_messages-number {
+      padding: 2px 6px 2px 6px;
+      background: $overall-info_background;
+      border-radius: 10px;
+    }
+  }
+}
