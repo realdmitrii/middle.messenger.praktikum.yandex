@@ -15,7 +15,6 @@
 https://www.figma.com/file/jF5fFFzgGOxQeB4CmKWTiE/Chat_external_link?node-id=0%3A1
 
 
-
 **Структура:**
 
 - core: ключевые классы приложения и функции для работы с ними;
@@ -26,7 +25,6 @@ https://www.figma.com/file/jF5fFFzgGOxQeB4CmKWTiE/Chat_external_link?node-id=0%3
 - data: данные о владельце, пользователях и выбранных чатах;
 - pages: страницы;
 - services: вспомогательные функции и классы;
-
 
 **Реализация**  
 На данный момент реализован минимальный функционал чата:

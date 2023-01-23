@@ -1,4 +1,23 @@
-dist
-node_modules
-.parcel-cache
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
 
+dist
+dist-ssr
+node_modules
+*.local
+
+# Editor directories and files
+.parcel-cache
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
