@@ -1,7 +1,6 @@
-<<<<<<< HEAD
-# Чат волчат
-https://img.shields.io/badge/status-production-brightgreen
-https://img.shields.io/badge/yandex-practicum-yellow
+# Чат волчат sprint 3
+![In process](https://img.shields.io/badge/status-production-brightgreen)
+![Ya](https://img.shields.io/badge/yandex-practicum-yellow)
 
 ## Описание
 Учебный проект, в разработке
