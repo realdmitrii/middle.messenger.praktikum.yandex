@@ -1,7 +1,7 @@
 # Чат волчат spint 3
 ![In process](https://img.shields.io/badge/status-production-brightgreen)
 ![Ya](https://img.shields.io/badge/yandex-practicum-yellow)
-[![Netlify Status]()
+[![Netlify Status](https://api.netlify.com/api/v1/badges/78d7cf21-184d-45e4-9d3d-fc82f497226c/deploy-status)](https://app.netlify.com/sites/dapper-frangollo-6cdc5f/deploys)
 
 ## Описание
 Учебный проект, в разработке
