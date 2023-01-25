@@ -1,0 +1,104 @@
+<div class="chats-board">
+  <div class="chats-board__control">
+    {{{Button
+      class="chats-board__control_button_plus svg"
+      icon=true
+      onClick=openModalAddChat
+    }}}
+
+    {{{Button
+      class="chats-board__control_button_settings svg"
+      icon=true
+      onClick=goToProfilePage
+    }}}
+
+    {{{Button
+      class="chats-board__control_button_exit svg"
+      icon=true
+      onClick=logout
+    }}}
+  </div>
+
+  <div class="chats-board__list">
+    {{#each chatCards}}
+      {{{ChatCard
+        id=id
+        title=title
+        unread_count=unread_count
+        last_message=last_message
+        time=time
+      }}}
+    {{/each}}
+  </div>
+
+  {{#Modal
+    class="chats-board__modal chats-board__modal_create-chat"
+    isOpen=modal.first
+  }}
+    <form class="chats-board__modal-wrapper">
+      {{{Input
+        name="modal"
+        type="text"
+        class="chats-board__modal-input input"
+        autocomplete="off"
+        placeholder="Название чата"
+      }}}
+      {{{Button type="submit" value="Создать чат" onClick=createChat}}}
+    </form>
+  {{/Modal}}
+
+  {{#Modal
+    class="chats-board__modal chats-board__modal_manage-chat"
+    isOpen=modal.second
+  }}
+    <form class="chats-board__modal-wrapper">
+      {{{Button
+        type="button"
+        value="Добавить пользователя"
+        onClick=openModalAddUserToChat
+      }}}
+      {{{Button
+        type="button"
+        value="Удалить пользователя"
+        onClick=openModalDelUserFromChat
+      }}}
+      {{{Button type="button" value="Удалить чат" onClick=delChat}}}
+    </form>
+  {{/Modal}}
+
+  {{#Modal
+    class="chats-board__modal chats-board__modal_users"
+    isOpen=modal.third
+  }}
+    {{#Form onSubmit=addUserToChat}}
+      <div class="chats-board__modal-wrapper">
+        {{{Input
+          name="modal"
+          type="text"
+          class="chats-board__modal-input input"
+          autocomplete="off"
+          placeholder="Точный логин пользователя"
+        }}}
+        {{{Button type="submit" value="Добавить пользователя"}}}
+      </div>
+    {{/Form}}
+  {{/Modal}}
+
+  {{#Modal
+    class="chats-board__modal chats-board__modal_users"
+    isOpen=modal.fourth
+  }}
+    {{#Form onSubmit=delUserFromChat}}
+      <div class="chats-board__modal-wrapper">
+        {{{Input
+          name="modal"
+          type="text"
+          class="chats-board__modal-input input"
+          autocomplete="off"
+          placeholder="Точный логин пользователя"
+        }}}
+        {{{Button type="submit" value="Удалить пользователя"}}}
+      </div>
+    {{/Form}}
+  {{/Modal}}
+</div>

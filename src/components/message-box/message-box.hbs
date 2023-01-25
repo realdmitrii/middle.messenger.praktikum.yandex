@@ -1,0 +1,21 @@
+{{#if taken}}
+  <div class="message-box">
+    <div class="message-box__time_taken">
+      {{time}}
+    </div>
+
+    <div class="message-box__message_shape_taken message-box_taken">
+      {{content}}
+    </div>
+  </div>
+{{else}}
+  <div class="message-box message-box__flex-align_right">
+    <div class="message-box__time_sended">
+      {{time}}
+    </div>
+
+    <div class="message-box__message_shape_sended message-box_sended">
+      {{content}}
+    </div>
+  </div>
+{{/if}}

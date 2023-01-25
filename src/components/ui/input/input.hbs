@@ -1,0 +1,37 @@
+{{#if autocomplete}}
+  {{#if value}}
+    <input
+      name="{{name}}"
+      type="{{type}}"
+      class="{{class}}"
+      autocomplete="{{autocomplete}}"
+      value="{{value}}"
+      placeholder="{{placeholder}}"
+    />
+  {{else}}
+    <input
+      name="{{name}}"
+      type="{{type}}"
+      class="{{class}}"
+      autocomplete="{{autocomplete}}"
+      placeholder="{{placeholder}}"
+    />
+  {{/if}}
+{{else}}
+  {{#if value}}
+    <input
+      name="{{name}}"
+      type="{{type}}"
+      class="{{class}}"
+      value="{{value}}"
+      placeholder="{{placeholder}}"
+    />
+  {{else}}
+    <input
+      name="{{name}}"
+      type="{{type}}"
+      class="{{class}}"
+      placeholder="{{placeholder}}"
+    />
+  {{/if}}
+{{/if}}

@@ -1,0 +1,27 @@
+@import '../../../styles/variables.css';
+
+.button {
+  height: 50px;
+  width: 400px;
+  line-height: 50px;
+  font-size: $text_font-size;
+  text-align: center;
+  text-decoration: none;
+  color: $input_color;
+  background: $scrollbar-thumb_background;
+  box-shadow: $box-shadow-1, $box-shadow-2, $box-shadow-3;
+  border-radius: 12px;
+  border-style: none;
+  appearance: button;
+  cursor: pointer;
+
+  &:active {
+    transform: scale(0.98);
+    box-shadow: $box-shadow-4, $box-shadow-5, $box-shadow-6;
+  }
+
+  &:focus {
+    outline: 1px solid red;
+    outline-style: solid;
+  }
+}

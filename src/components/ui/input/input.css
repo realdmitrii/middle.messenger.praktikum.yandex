@@ -1,0 +1,26 @@
+@import '../../../styles/variables.css';
+
+.input {
+  height: 50px;
+  padding: 0px 15px 0px 15px;
+  font-family: 'Inter', sans-serif;
+  font-size: $text_font-size;
+  color: $input_color;
+  background: $input_background;
+  border-style: none;
+  border-radius: 12px;
+  box-shadow: $input_box-shadow;
+
+  &::selection {
+    background: hsl(200, 50%, 70%);
+    color: hsl(200, 10%, 15%);
+  }
+
+  &:focus {
+    outline: 1px solid hsl(200, 80%, 40%);
+  }
+
+  &__warning {
+    border: 2px solid red;
+  }
+}

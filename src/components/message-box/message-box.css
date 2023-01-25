@@ -1,0 +1,67 @@
+@import '../../styles/variables.css';
+
+.message-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: auto;
+
+  &__time_taken,
+  &__time_sended,
+  &__message_shape_taken,
+  &__message_shape_sended {
+    padding: 5px;
+  }
+
+  &__time_taken {
+    width: 52px;
+    font-size: $description_font-size;
+    color: $chat-message-taken_color;
+    background: $chat-message-taken_background;
+    box-shadow: $chat-message-taken_box-shadow;
+    border-radius: 0 8px 8px 0;
+  }
+
+  &__time_sended {
+    width: 52px;
+    margin-right: 7px;
+    font-size: $description_font-size;
+    color: $chat-message-sended_color;
+    background: $chat-message-sended_background;
+    box-shadow: $chat-message-sended_box-shadow;
+    border-radius: 8px 0 0 8px;
+  }
+
+  &__message_shape_taken,
+  &__message_shape_sended {
+    min-width: 52px;
+    max-width: 75%;
+    width: fit-content;
+    font-size: $message_font-size;
+  }
+
+  &__message_shape_taken {
+    border-radius: 0 8px 8px 0;
+  }
+
+  &__message_shape_sended {
+    border-radius: 8px 0 0 8px;
+  }
+
+  &__flex-align_right {
+    align-items: flex-end;
+  }
+
+  &_taken {
+    color: $chat-message-taken_color;
+    background: $chat-message-taken_background;
+    box-shadow: $chat-message-taken_box-shadow;
+  }
+
+  &_sended {
+    margin-right: 7px;
+    color: $chat-message-sended_color;
+    background: $chat-message-sended_background;
+    box-shadow: $chat-message-sended_box-shadow;
+  }
+}

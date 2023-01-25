@@ -1,0 +1,120 @@
+<div class="profile">
+  {{{Avatar
+    class="profile__avatar"
+    online=true
+    avatar=avatar
+    onClick=openModalChangeAvatar
+  }}}
+
+  <div class="profile__warning warning"></div>
+  <form class="profile__form">
+    <div class="profile__wrapper_inputs">
+      <div class="profile__wrapper_input">
+        <label for="login" class="profile__description">Логин</label>
+        {{{Input
+          name="login"
+          type="text"
+          class="profile__input input"
+          autocomplete="user-name"
+          value=login
+          onFocus=focus
+          onBlur=blur
+        }}}
+      </div>
+
+      <div class="profile__wrapper_input">
+        <label for="first_name" class="profile__description">Имя</label>
+        {{{Input
+          name="first_name"
+          type="text"
+          class="profile__input input"
+          autocomplete="given-name"
+          value=first_name
+          onFocus=focus
+          onBlur=blur
+        }}}
+      </div>
+
+      <div class="profile__wrapper_input">
+        <label for="second_name" class="profile__description">Фамилия</label>
+        {{{Input
+          name="second_name"
+          type="text"
+          class="profile__input input"
+          autocomplete="family_name"
+          value=second_name
+          onFocus=focus
+          onBlur=blur
+        }}}
+      </div>
+
+      <div class="profile__wrapper_input">
+        <label for="display_name" class="profile__description">Отображаемое имя</label>
+        {{{Input
+          name="display_name"
+          type="text"
+          class="profile__input input"
+          autocomplete="nickname"
+          value=display_name
+          onFocus=focus
+          onBlur=blur
+        }}}
+      </div>
+
+      <div class="profile__wrapper_input">
+        <label for="phone" class="profile__description">Номер телефона</label>
+        {{{Input
+          name="phone"
+          type="phone"
+          class="profile__input input"
+          autocomplete="tel"
+          value=phone
+          onFocus=focus
+          onBlur=blur
+        }}}
+      </div>
+
+      <div class="profile__wrapper_input">
+        <label for="email" class="profile__description">Почта</label>
+        {{{Input
+          name="email"
+          type="email"
+          class="profile__input input"
+          autocomplete="email"
+          value=email
+          onFocus=focus
+          onBlur=blur
+        }}}
+      </div>
+    </div>
+
+    <div class="profile__wrapper_buttons">
+      {{{Button type="submit" value="Сохранить изменения" onClick=save}}}
+      {{{Button
+        type="button"
+        value="Изменить пароль"
+        onClick=onPasswordChangePage
+      }}}
+      {{{Button type="button" value="Вернуться назад" onClick=goBack}}}
+    </div>
+  </form>
+
+  {{#Modal class="profile__modal-profile" isOpen=modal.first}}
+    <div>Изменения сохранены</div>
+  {{/Modal}}
+
+  {{#Modal class="profile__modal-avatar" isOpen=modal.second}}
+    <form class="form_avatar">
+      <div class="profile__wrapper_file-input">
+        <label class="profile__label-input" for="avatar">Выберите файл</label>
+        <input
+          id="avatar"
+          name="avatar"
+          class="profile__input-file"
+          type="file"
+        />
+        {{{Button type="" value="Сохранить" onClick=changeAvatar}}}
+      </div>
+    </form>
+  {{/Modal}}
+</div>

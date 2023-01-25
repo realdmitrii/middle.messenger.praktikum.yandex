@@ -1,0 +1,11 @@
+<div class="chat__chat-users chat-users">
+  {{#each chatUsers}}
+    {{{Avatar
+      class="selected-chats__avatar avatar"
+      online="online"
+      avatar=avatar
+      onMouseOver=mover
+      onClick=moverclick
+    }}}
+  {{/each}}
+</div>

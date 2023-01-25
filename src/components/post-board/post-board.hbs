@@ -1,0 +1,14 @@
+{{#Form onSubmit=sendMessage}}
+  <div class="post-board">
+    {{{Button type="button" class="post-board__button_attach svg" icon=true}}}
+    {{{Button type="button" class="post-board__button_emoji svg" icon=true}}}
+    {{{Button type="button" class="post-board__button_send svg" icon=true}}}
+
+    {{{Input
+      name="message"
+      type="text"
+      class="post-board__input input"
+      autocomplete="off"
+    }}}
+  </div>
+{{/Form}}

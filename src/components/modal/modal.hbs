@@ -1,0 +1,14 @@
+<div>
+  {{#if isOpen}}
+    <div class="modal__overlay" tabindex="0"></div>
+    <div class="modal__container {{{class}}}">
+      {{{Button
+        type="button"
+        class="modal__button_close"
+        icon=true
+        negativeIndex=true
+      }}}
+      <div data-slot="1"></div>
+    </div>
+  {{/if}}
+</div>

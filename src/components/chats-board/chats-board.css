@@ -1,0 +1,94 @@
+@import '../../styles/variables.css';
+
+.chats-board {
+  user-select: none;
+  gap: 10px;
+
+  &__control {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 92px;
+    width: 506px;
+    padding-right: 5px;
+    font-size: $text_font-size;
+    color: $last-message_color;
+    border-bottom: 2px solid $line_color;
+
+    &_button_plus {
+      background-image: url('../../assets/images/icons/plus.svg');
+      cursor: pointer;
+    }
+
+    &_button_settings {
+      background-image: url('../../assets/images/icons/user.svg');
+      cursor: pointer;
+    }
+
+    &_button_exit {
+      background-image: url('../../assets/images/icons/exit.svg');
+      cursor: pointer;
+    }
+
+    &_button_plus:active,
+    &_button_settings:active,
+    &_button_exit:active {
+      transform: scale(0.9);
+    }
+
+    &_input {
+      width: 378px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    jystify-content: space-around;
+    flex-direction: column;
+    position: fixed;
+    left: 10px;
+    top: 104px;
+    bottom: 10px;
+    gap: 10px;
+    overflow: auto;
+  }
+
+  &__list::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+
+  &__modal {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  &__modal_create-chat {
+    width: 420px;
+    height: 165px;
+  }
+
+  &__modal_manage-chat {
+    width: 420px;
+    height: 225px;
+  }
+
+  &__modal_users {
+    width: 420px;
+    height: 170px;
+  }
+
+  &__modal-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  &__modal-input {
+    width: 400px;
+  }
+}

@@ -1,0 +1,33 @@
+<div class="chat-card" id="{{id}}">
+  <div class="chat-card__chat-info">
+    <div class="chat-card__chat-info_display-name">
+      {{title}}
+    </div>
+
+    {{#if last_message}}
+      <div class="chat-card__chat-info_last-message">
+        {{last_message}}
+      </div>
+    {{/if}}
+  </div>
+
+  <div class="chat-card__overall-info">
+    {{#if time}}
+      <time class="chat-card__overall-info_time">
+        {{{time}}}
+      </time>
+    {{/if}}
+    {{#if unread_count}}
+      <div class="chat-card__overall-info_messages-number">
+        {{unread_count}}
+      </div>
+    {{/if}}
+  </div>
+
+  {{{Button
+    type="button"
+    class="chat-card__button_settings svg"
+    icon=true
+    onClick=settings
+  }}}
+</div>
