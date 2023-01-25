@@ -6,7 +6,9 @@
     "target": "es2022" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
 
     /* Modules */
+    "baseUrl": "src",
     "module": "commonjs" /* Specify what module code is generated. */,
+    
     "typeRoots": [
       "node_modules/@types",
       "types/declarations.d.ts"
