@@ -1,5 +1,5 @@
-import { PATH } from '../constants';
-import { HTTPTransport } from '../services/HTTPTransport';
+import { PATH } from 'services/constants';
+import { HTTPTransport } from 'services/HTTPTransport';
 
 export abstract class BaseAPI {
   private readonly baseURL = PATH.baseURL;

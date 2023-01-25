@@ -1,8 +1,7 @@
 import './chat-users.css';
 import fn from './chat-users.hbs';
-import { Block } from '../../core/Block';
-import { store } from '../../core/Store';
-import { customLog } from '../../services/customLog';
+import { Block } from 'core/Block';
+import { store } from 'core/Store';
 
 export class ChatUsers extends Block {
   static componentName = 'ChatUsers';
@@ -20,8 +19,6 @@ export class ChatUsers extends Block {
   }
 
   render() {
-    customLog(2, this, 'ChatUsers'); // TODO: удалить
-
     return this.compile(fn, { ...this.props });
   }
 }

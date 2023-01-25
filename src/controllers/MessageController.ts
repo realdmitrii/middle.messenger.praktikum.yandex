@@ -1,8 +1,7 @@
+import { PATH } from 'services/constants';
+import { store } from 'core/Store';
+import { getMessageTime } from 'services/helpers';
 import { chatController } from './ChatController';
-import { PATH } from '../constants';
-import { store } from '../core/Store';
-import { customLog } from '../services/customLog';
-import { getMessageTime } from '../services/helpers';
 
 class MessagesController {
   private _socket: WebSocket;
@@ -20,8 +19,8 @@ class MessagesController {
       this._socket = new WebSocket(
         `${PATH.socket}/${userId}/${chatId}/${token}`
       );
-    } catch (error: any) {
-      customLog(0, error);
+    } catch (error: unknown) {
+      console.error(error);
     }
 
     this._addListeners();
@@ -57,18 +56,15 @@ class MessagesController {
 
   private async _openHandler() {
     if (this._socket) {
-      customLog(5, 'WS: соединение установлено'); // TODO: удалить
-
       // Получение непрочитанных сообщений
       try {
         await this._getMessages();
-      } catch (error: any) {
-        customLog(0, error); // TODO: удалить
+      } catch (error: unknown) {
+        console.error(error);
       }
 
       this._intervalFunction = setInterval(() => {
         this._socketPing();
-        customLog(5, 'WS: ping'); // TODO: удалить
       }, 15000);
     }
   }
@@ -79,7 +75,7 @@ class MessagesController {
     clearInterval(this._intervalFunction);
 
     if (event && !event.wasClean) {
-      customLog(5, 'WS: проблемы с подключением к чату. Обновите страницу.'); // TODO: удалить
+      console.error('WS: проблемы с подключением к чату. Обновите страницу.');
     }
   }
 
@@ -93,20 +89,17 @@ class MessagesController {
         );
         store.set('messages', serverMessage.reverse());
       } else {
-        if (serverMessage.type === 'user connected') {
-          customLog(5, 'WS: пользователь подключён'); // TODO: удалить
-        } else {
+        // if (serverMessage.type === 'user connected') {
           serverMessage.time = getMessageTime(serverMessage.time);
           store.pushMessage(serverMessage);
           chatController.getChats();
         }
       }
     }
-  }
 
   private _errorHandler(e: Event): void {
     if (e instanceof Error) {
-      customLog(5, `%c WS: ошибка ${e.message}`); // TODO: удалить
+      console.error(e);
     }
   }
 
@@ -124,15 +117,14 @@ class MessagesController {
         return true;
       }
       return false;
-    } catch (error: any) {
-      customLog(5, `%c WS: ошибка при передаче сообщения: ${error}`); // TODO: удалить
+    } catch (error: unknown) {
+      console.error(error);
       return false;
     }
   }
 
   private _closeConnection(): void {
     if (this._socket) {
-      customLog(5, '%c WS: закрытие соединения'); // TODO: удалить
       clearInterval(this._intervalFunction);
       this._socket.close();
       this._removeListeners();

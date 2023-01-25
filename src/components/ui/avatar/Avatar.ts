@@ -1,14 +1,13 @@
-import { PATH } from './../../../constants';
+import { PATH } from 'services/constants';
 import './avatar.css';
 import fn from './avatar.hbs';
-import { Block } from '../../../core/Block';
-import { customLog } from '../../../services/customLog';
-import emptySVG from '../../../assets/images/avatars/empty.svg';
+import { Block } from 'core/Block';
+import emptySVG from 'assets/images/avatars/empty.svg';
 
 interface Props {
   class: string;
   online: boolean;
-  avatar: string;
+  imgSrc: string;
   onClick: () => void;
 }
 
@@ -19,11 +18,11 @@ export class Avatar extends Block {
     super({
       class: props.class,
       online: props.online ? 'online' : 'offline',
-      avatar: () => {
-        if (props.avatar === null) {
+      src: () => {
+        if (props.imgSrc === null) {
           return emptySVG;
         } else {
-          return `${PATH.baseAvatarURL}${props.avatar}`;
+          return `${PATH.baseAvatarURL}${props.imgSrc}`;
         }
       },
       events: {
@@ -33,8 +32,6 @@ export class Avatar extends Block {
   }
 
   render() {
-    customLog(3, this, 'Avatar'); // TODO: удалить
-
     return this.compile(fn, { ...this.props });
   }
 }

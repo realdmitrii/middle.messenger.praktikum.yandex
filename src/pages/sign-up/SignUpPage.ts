@@ -1,9 +1,8 @@
 import './sign-up.css';
 import fn from './sign-up.hbs';
-import { ValidatedInputs } from '../../core/ValidatedInputs';
-import { router } from '../../core/Router';
-import { authController } from '../../controllers/AuthController';
-import { customLog } from '../../services/customLog';
+import { ValidatedInputs } from 'core/ValidatedInputs';
+import { router } from 'core/Router';
+import { authController } from 'controllers/AuthController';
 
 export class SignUpPage extends ValidatedInputs {
   private _signUp(e: Event) {
@@ -28,8 +27,6 @@ export class SignUpPage extends ValidatedInputs {
   }
 
   render() {
-    customLog(1, this, 'Sign up page'); // TODO: удалить
-
     return this.compile(fn, {
       focus: this.validateInput.bind(this),
       blur: this.validateInput.bind(this),

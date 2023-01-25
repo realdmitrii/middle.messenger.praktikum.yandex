@@ -11,7 +11,7 @@
     ],
 
     "^.+\\.hbs$": "<rootDir>/node_modules/handlebars-jest",
-    "^.+\\.svg$": "<rootDir>/transformers/svgTransformer.js"
+    "^.+\\.svg$": "<rootDir>/jesttransformers/svgTransformer.js"
   },
 
   "transformIgnorePatterns": ["<rootDir>/node_modules/"],

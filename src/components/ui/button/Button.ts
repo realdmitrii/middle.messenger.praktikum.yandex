@@ -1,7 +1,6 @@
-import { customLog } from './../../../services/customLog';
 import './button.css';
 import fn from './button.hbs';
-import { Block } from '../../../core/Block';
+import { Block } from 'core/Block';
 
 interface Props {
   type: string;
@@ -9,7 +8,7 @@ interface Props {
   value: string;
   icon: boolean;
   negativeTabIndex: boolean;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export class Button extends Block {
@@ -25,8 +24,6 @@ export class Button extends Block {
   }
 
   render() {
-    customLog(3, this, 'Button'); // TODO: удалить
-
     return this.compile(fn, { ...this.props });
   }
 }

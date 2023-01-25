@@ -20,7 +20,7 @@ class Route {
   }
 }
 
-class Router {
+export class Router {
   private _routes: Route[] = [];
 
   constructor(routes: Record<string, any>[]) {
@@ -29,7 +29,7 @@ class Router {
     });
   }
 
-  private _onRoute(pathname: string) {
+  _onRoute(pathname: string) {
     const route = this._routes.find(route => route.match(pathname));
 
     if (!route) {
@@ -78,7 +78,7 @@ class Router {
   }
 }
 
-const routes = [
+export const routes = [
   {
     path: '/',
     block: SignInPage

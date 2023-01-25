@@ -1,11 +1,10 @@
 import './chats-board.css';
 import fn from './chats-board.hbs';
-import { Block } from '../../core/Block';
-import { router } from '../../core/Router';
-import { store } from '../../core/Store';
-import { authController } from '../../controllers/AuthController';
-import { chatController } from './../../controllers/ChatController';
-import { customLog } from '../../services/customLog';
+import { Block } from 'core/Block';
+import { router } from 'core/Router';
+import { store } from 'core/Store';
+import { authController } from 'controllers/AuthController';
+import { chatController } from 'controllers/ChatController';
 
 export class ChatsBoard extends Block {
   static componentName = 'ChatsBoard';
@@ -92,8 +91,6 @@ export class ChatsBoard extends Block {
   }
 
   render() {
-    customLog(2, this, 'UsersBoard'); // TODO: удалить
-
     return this.compile(fn, { ...this.props });
   }
 }

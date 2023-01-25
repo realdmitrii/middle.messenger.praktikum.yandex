@@ -6,8 +6,16 @@
   {{/if}}
 {{else}}
   {{#if class}}
-    <button type="{{type}}" class="{{class}} button">{{value}}</button>
+    <button
+      data-testid="button-test"
+      type="{{type}}"
+      class="{{class}} button"
+    >{{value}}</button>
   {{else}}
-    <button type="{{type}}" class="button">{{value}}</button>
+    <button
+      data-testid="button-test"
+      type="{{type}}"
+      class="button"
+    >{{value}}</button>
   {{/if}}
 {{/if}}

@@ -1,7 +1,6 @@
 import './input.css';
 import fn from './input.hbs';
-import { Block } from '../../../core/Block';
-import { customLog } from '../../../services/customLog';
+import { Block } from 'core/Block';
 
 interface Props {
   name: string;
@@ -28,8 +27,6 @@ export class Input extends Block {
   }
 
   render() {
-    customLog(3, this, 'Input'); // TODO: удалить
-
     return this.compile(fn, { ...this.props });
   }
 }

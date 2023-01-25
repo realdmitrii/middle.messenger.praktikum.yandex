@@ -1,10 +1,9 @@
 import './chat-card.css';
 import fn from './chat-card.hbs';
-import { Block } from '../../core/Block';
-import { customLog } from '../../services/customLog';
-import { store } from '../../core/Store';
-import { messagesController } from './../../controllers/MessageController';
-import { chatController } from './../../controllers/ChatController';
+import { Block } from 'core/Block';
+import { store } from 'core/Store';
+import { messagesController } from 'controllers/MessageController';
+import { chatController } from 'controllers/ChatController';
 
 interface Props {
   id: string;
@@ -35,8 +34,8 @@ export class ChatCard extends Block {
 
           try {
             messagesController.connect();
-          } catch (error: any) {
-            customLog(0, error);
+          } catch (error: unknown) {
+            console.error(error);
           }
 
           chatController.getChatUsers(Number(chatCard.id));
@@ -51,7 +50,8 @@ export class ChatCard extends Block {
     const settingsButton = e.target as HTMLElement;
     const chatCard = settingsButton.closest('.chat-card') as HTMLElement;
     /**
-     * Запоминает идентификатор родительского блока (являющийся
+     * (при нажатии на карточку чата) запоминает
+     * идентификатор родительского блока (являющийся
      * по совместительству идентификатором чата)
      */
     store.set('chatId', chatCard.id);
@@ -59,8 +59,6 @@ export class ChatCard extends Block {
   }
 
   render() {
-    customLog(3, this, 'UserCard'); // TODO: удалить
-
     return this.compile(fn, { ...this.props });
   }
 }

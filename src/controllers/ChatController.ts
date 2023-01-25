@@ -1,9 +1,8 @@
+import { chatAPI } from 'api/ChatAPI';
+import { router } from 'core/Router';
+import { store } from 'core/Store';
+import { getChatCardDate } from 'services/helpers';
 import { userController } from './UserController';
-import { chatAPI } from '../api/ChatAPI';
-import { router } from '../core/Router';
-import { store } from '../core/Store';
-import { customLog } from '../services/customLog';
-import { getChatCardDate } from '../services/helpers';
 import { messagesController } from './MessageController';
 
 class ChatController {
@@ -19,12 +18,6 @@ class ChatController {
     this._api
       .getChats(offset, limit, title)
       .then(xhr => {
-        customLog(
-          4,
-          xhr,
-          `ChatController.getChats(${offset}, ${limit}, '${title}')`
-        ); // TODO: удалить
-
         const code = xhr.status;
 
         if (code === 200) {
@@ -59,10 +52,10 @@ class ChatController {
           store.set('isAuth', false);
           router.go('/');
         } else if (code === 500) {
-          customLog(0, 'Непредвиденная ошибка'); // TODO: заменить
+          console.error('Непредвиденная ошибка');
         }
       })
-      .catch(error => customLog(0, error));
+      .catch(error => console.error(error));
   }
 
   // Создание чата
@@ -89,7 +82,6 @@ class ChatController {
     await this._api
       .createChat(chatName)
       .then(xhr => {
-        customLog(4, xhr, `ChatController.createChat(${chatName})`); // TODO: удалить
         const code = xhr.status;
 
         if (code === 200) {
@@ -99,10 +91,10 @@ class ChatController {
           store.set('isAuth', false);
           router.go('/');
         } else if (code === 500) {
-          customLog(0, 'Непредвиденная ошибка'); // TODO: заменить
+          console.error('Непредвиденная ошибка');
         }
       })
-      .catch(error => customLog(0, error));
+      .catch(error => console.error(error));
 
     store.set('modal.first', false);
     this.getChats();
@@ -126,7 +118,6 @@ class ChatController {
     await this._api
       .deleteChat(chatId)
       .then(xhr => {
-        customLog(4, xhr, `ChatController.deleteChat(${chatId})`); // TODO: удалить
         const code = xhr.status;
 
         if (code === 200) {
@@ -135,10 +126,10 @@ class ChatController {
           store.set('isAuth', false);
           router.go('/');
         } else if (code === 500) {
-          customLog(0, 'Непредвиденная ошибка'); // TODO: заменить
+          console.error('Непредвиденная ошибка');
         }
       })
-      .catch(error => customLog(0, error));
+      .catch(error => console.error(error));
 
     store.set('chatUsers', []);
     this.getChats();
@@ -163,12 +154,6 @@ class ChatController {
     await this._api
       .getChatUsers(chatId, offset, limit, name, email)
       .then(xhr => {
-        customLog(
-          4,
-          xhr,
-          `ChatController.getChatUsers(${chatId}, ${offset}, ${limit}, '${name}', '${email}')`
-        ); // TODO: удалить
-
         const code = xhr.status;
 
         if (code === 200) {
@@ -177,12 +162,12 @@ class ChatController {
           store.set('isAuth', false);
           router.go('/');
         } else if (code === 404) {
-          customLog(0, 'Чат не найден'); // TODO: заменить
+          console.error('Чат не найден');
         } else if (code === 500) {
-          customLog(0, 'Непредвиденная ошибка'); // TODO: заменить
+          console.error('Непредвиденная ошибка');
         }
       })
-      .catch(error => customLog(0, error));
+      .catch(error => console.error(error));
   }
 
   // Добавление пользователей к чату
@@ -197,8 +182,8 @@ class ChatController {
     let users: User[] = [];
     try {
       users = await userController.searchUserByLogin(login);
-    } catch (error: any) {
-      customLog(0, error);
+    } catch (error: unknown) {
+      console.error(error);
     }
 
     const firstFoundedUser: User = users[0];
@@ -215,11 +200,6 @@ class ChatController {
     await this._api
       .addUsersToChat([firstFoundedUserId], chatId)
       .then(xhr => {
-        customLog(
-          4,
-          xhr,
-          `ChatController.addUsersToChat([${firstFoundedUserId}], ${chatId})`
-        ); // TODO: удалить
         const code = xhr.status;
 
         if (code === 200) {
@@ -228,10 +208,10 @@ class ChatController {
           store.set('isAuth', false);
           router.go('/');
         } else if (code === 500) {
-          customLog(0, 'Непредвиденная ошибка'); // TODO: заменить
+          console.error('Непредвиденная ошибка');
         }
       })
-      .catch(error => customLog(0, error));
+      .catch(error => console.error(error));
 
     this.getChatUsers(chatId);
     this.getChats();
@@ -248,8 +228,8 @@ class ChatController {
 
     try {
       await this.getChatUsers(chatId);
-    } catch (error: any) {
-      customLog(0, error);
+    } catch (error: unknown) {
+      console.error(error);
     }
 
     const chatUsers = store.get().chatUsers;
@@ -257,7 +237,6 @@ class ChatController {
     let userForDeleteId: number | null = null;
 
     for (const user of chatUsers) {
-      customLog(0, user.login);
       if (login === user.login) {
         userForDeleteId = user.id;
         break;
@@ -271,11 +250,6 @@ class ChatController {
     await this._api
       .deleteUsersFromChat([userForDeleteId], chatId)
       .then(xhr => {
-        customLog(
-          4,
-          xhr,
-          `ChatController.deleteUsersFromChat([${userForDeleteId}], ${chatId})`
-        ); // TODO: удалить
         const code = xhr.status;
 
         if (code === 200) {
@@ -284,10 +258,10 @@ class ChatController {
           store.set('isAuth', false);
           router.go('/');
         } else if (code === 500) {
-          customLog(0, 'Непредвиденная ошибка'); // TODO: заменить
+          console.error('Непредвиденная ошибка');
         }
       })
-      .catch(error => customLog(0, error));
+      .catch(error => console.error(error));
 
     this.getChatUsers(chatId);
     this.getChats();
@@ -296,7 +270,6 @@ class ChatController {
   // Возвращает токен для подключения к серверу сообщений
   async getToken(chatId: number) {
     return this._api.getToken(chatId).then(xhr => {
-      customLog(4, xhr, `ChatController.getToken(${chatId})`); // TODO: удалить
       return JSON.parse(xhr.response).token;
     });
   }

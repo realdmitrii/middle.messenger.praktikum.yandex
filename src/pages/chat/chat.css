@@ -2,7 +2,7 @@
 
 .chat {
   display: flex;
-  jystify-content: center;
+  justify-content: center;
   width: 100vw;
   height: 100vh;
   background: $chat_background;
@@ -13,6 +13,10 @@
   }
 
   &__line {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 506px;
     border-right: 2px solid $line_color;
   }
 
@@ -32,7 +36,7 @@
     right: 0;
     bottom: 72px;
     left: 508px;
-    padding: 10px 0 10px 0;
+    padding: 10px 0;
     border-top: 2px solid $line_color;
     border-bottom: 2px solid $line_color;
     overflow: auto;

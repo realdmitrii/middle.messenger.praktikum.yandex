@@ -1,5 +1,5 @@
 import { Block } from './Block';
-import * as Handlebars from 'handlebars/dist/handlebars.runtime';
+import Handlebars from 'handlebars/runtime';
 import { HelperOptions } from 'handlebars';
 
 interface BlockConstructable<Props = any> {
@@ -9,7 +9,7 @@ interface BlockConstructable<Props = any> {
 
 export function registerComponent(Component: BlockConstructable) {
   Handlebars.registerHelper(
-    Component.componentName,
+    Component.componentName || Component.name,
     function ({ fn, hash, data }: HelperOptions) {
       if (!data.root.children) {
         data.root.children = {};
@@ -17,7 +17,7 @@ export function registerComponent(Component: BlockConstructable) {
 
       const component = new Component(hash);
       data.root.children[component.id] = component;
-      const contents = fn ? fn(this) : '';
+      const contents: any = fn ? fn(this) : '';
       return `<div data-id='${component.id}'>${contents}</div>`;
     }
   );

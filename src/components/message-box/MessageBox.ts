@@ -1,8 +1,7 @@
 import './message-box.css';
 import fn from './message-box.hbs';
-import { Block } from '../../core/Block';
-import { customLog } from '../../services/customLog';
-import { store } from '../../core/Store';
+import { Block } from 'core/Block';
+import { store } from 'core/Store';
 
 interface Props {
   user_id: number;
@@ -22,9 +21,6 @@ export class MessageBox extends Block {
   }
 
   render() {
-    customLog(3, this, 'MessageBox'); // TODO: удалить
-    console.log(this.props);
-
     return this.compile(fn, { ...this.props });
   }
 }

@@ -1,9 +1,8 @@
 import { messagesController } from './../../controllers/MessageController';
 import './post-board.css';
 import fn from './post-board.hbs';
-import { Block } from '../../core/Block';
-import { customLog } from '../../services/customLog';
-import { xssDef } from '../../services/xssDef';
+import { Block } from 'core/Block';
+import { xssDef } from 'services/xssDef';
 
 export class PostBoard extends Block {
   static componentName = 'PostBoard';
@@ -23,8 +22,8 @@ export class PostBoard extends Block {
     if (inputValue !== '') {
       try {
         await messagesController.sendMessage(inputValue);
-      } catch (error: any) {
-        customLog(0, error);
+      } catch (error: unknown) {
+        console.error(error);
       }
 
       input.value = '';
@@ -32,8 +31,6 @@ export class PostBoard extends Block {
   }
 
   render() {
-    customLog(2, this, 'PostBoard'); // TODO: удалить
-
     return this.compile(fn, { ...this.props });
   }
 }

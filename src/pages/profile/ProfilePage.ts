@@ -1,10 +1,9 @@
 import './profile.css';
 import fn from './profile.hbs';
-import { ValidatedInputs } from '../../core/ValidatedInputs';
-import { router } from '../../core/Router';
-import { store } from '../../core/Store';
-import { userController } from '../../controllers/UserController';
-import { customLog } from '../../services/customLog';
+import { ValidatedInputs } from 'core/ValidatedInputs';
+import { store } from 'core/Store';
+import { router } from 'core/Router';
+import { userController } from 'controllers/UserController';
 
 export class ProfilePage extends ValidatedInputs {
   constructor() {
@@ -56,8 +55,6 @@ export class ProfilePage extends ValidatedInputs {
   }
 
   render() {
-    customLog(1, this, 'Profile page'); // TODO: удалить
-
     return this.compile(fn, {
       login: store.get().user.login,
       first_name: store.get().user.first_name,

@@ -1,8 +1,7 @@
 import './modal.css';
 import fn from './modal.hbs';
-import { Block } from '../../core/Block';
-import { customLog } from '../../services/customLog';
-import { store } from '../../core/Store';
+import { Block } from 'core/Block';
+import { store } from 'core/Store';
 
 interface Props {
   class: string;
@@ -21,7 +20,7 @@ export class Modal extends Block {
     });
   }
 
-  componentDidMount(props: unknown): void {
+  componentDidMount(): void {
     const overlay = document.body.querySelector(
       '.modal__overlay'
     ) as HTMLElement;
@@ -72,8 +71,6 @@ export class Modal extends Block {
   }
 
   render() {
-    customLog(2, this, 'Modal'); // TODO: удалить
-
     return this.compile(fn, { ...this.props });
   }
 }

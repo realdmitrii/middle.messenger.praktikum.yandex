@@ -17,10 +17,6 @@ class UserAPI extends BaseAPI {
     return this.httpTransport.put('/password', data);
   }
 
-  // id(id: string): Promise<XMLHttpRequest> {
-  //   return this.httpTransport.get(`/${id}`);
-  // }
-
   searchUserByLogin(login: string): Promise<XMLHttpRequest> {
     return this.httpTransport.post('/search', { login: login });
   }

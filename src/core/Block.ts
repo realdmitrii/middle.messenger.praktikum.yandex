@@ -1,7 +1,7 @@
 import EventBus from './EventBus';
 import { nanoid } from 'nanoid';
 
-export abstract class Block<Props extends Record<string, any> = any> {
+export class Block<Props extends Record<string, any> = any> {
   static EVENTS = {
     INIT: 'init',
     FLOW_CDM: 'flow:component-did-mount',
@@ -11,10 +11,10 @@ export abstract class Block<Props extends Record<string, any> = any> {
   } as const;
 
   id = nanoid(6);
-  private _element: HTMLElement | null = null;
+  _element: HTMLElement | null = null;
   props: Props;
   children: Record<string, Block> = {};
-  private _eventBus: EventBus = new EventBus();
+  _eventBus: EventBus = new EventBus();
 
   constructor(props?: Props) {
     this.props = props || ({} as Props);
@@ -80,13 +80,9 @@ export abstract class Block<Props extends Record<string, any> = any> {
   }
 
   private _init() {
-    this.init();
-
     this._createResources();
     this._eventBus.emit(Block.EVENTS.FLOW_RENDER, this.props); // TODO удалить this.props
   }
-
-  init() {}
 
   private _componentDidMount(props: Props) {
     this._checkInDom();
@@ -94,7 +90,8 @@ export abstract class Block<Props extends Record<string, any> = any> {
   }
 
   // Может быть переопределено пользователем
-  componentDidMount(props: Props) {}
+  // eslint-disable-next-line
+  componentDidMount(_props: Props) {}
 
   private _componentDidUpdate(oldProps: Props, newProps: Props) {
     const response = this.componentDidUpdate(oldProps, newProps);
@@ -105,7 +102,7 @@ export abstract class Block<Props extends Record<string, any> = any> {
     this._render();
   }
 
-  componentDidUpdate(oldProps: Props, newProps: Props) {
+  componentDidUpdate(_oldProps: Props, _newProps: Props) {
     return true;
   }
 
@@ -150,6 +147,11 @@ export abstract class Block<Props extends Record<string, any> = any> {
     this._removeEvents();
 
     const newElement = fragment.firstElementChild!;
+
+    if (!this._element) {
+      return;
+    }
+
     this._element!.replaceWith(newElement);
     this._element = newElement as HTMLElement;
 
@@ -175,7 +177,7 @@ export abstract class Block<Props extends Record<string, any> = any> {
     return this.element!;
   }
 
-  compile(fn: Function, props: Record<string, unknown>) {
+  compile(fn: (context: any) => string, props: Record<string, unknown>) {
     const html = fn({ ...props, children: this.children });
     const temp = document.createElement('template');
     temp.innerHTML = html;
