@@ -1,0 +1,31 @@
+{
+  "testEnvironment": "jsdom",
+  "preset": "ts-jest",
+
+  "transform": {
+    "^.+\\.ts?$": [
+      "ts-jest",
+      {
+        "isolatedModules": true
+      }
+    ],
+
+    "^.+\\.hbs$": "<rootDir>/node_modules/handlebars-jest",
+    "^.+\\.svg$": "<rootDir>/transformers/svgTransformer.js"
+  },
+
+  "transformIgnorePatterns": ["<rootDir>/node_modules/"],
+  "resolver": "<rootDir>/src/tests/resolver.js",
+  "setupFilesAfterEnv": ["<rootDir>/src/tests/setup.ts"],
+  "moduleNameMapper": {
+    "\\.(css)$": "identity-obj-proxy",
+    "^api(.*)$": "<rootDir>/src/api$1",
+    "^assets(.*)$": "<rootDir>/src/assets$1",
+    "^components(.*)$": "<rootDir>/src/components$1",
+    "^controllers(.*)$": "<rootDir>/src/controllers$1",
+    "^core(.*)$": "<rootDir>/src/core$1",
+    "^services(.*)$": "<rootDir>/src/services$1",
+    "^pages(.*)$": "<rootDir>/src/pages$1",
+    "^tests(.*)$": "<rootDir>/src/tests$1"
+  }
+}
