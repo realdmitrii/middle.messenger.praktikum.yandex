@@ -1,7 +1,9 @@
-export default class EventBus {
-  listeners: Record<string, Function[]> = {};
+type callbackType = (...args: any) => void;
 
-  on(eventName: string, callback: Function) {
+export default class EventBus {
+  listeners: Record<string, callbackType[]> = {};
+
+  on(eventName: string, callback: callbackType) {
     if (!this.listeners[eventName]) {
       this.listeners[eventName] = [];
     }
@@ -9,7 +11,7 @@ export default class EventBus {
     this.listeners[eventName].push(callback);
   }
 
-  off(eventName: string, callback: Function) {
+  off(eventName: string, callback: callbackType) {
     if (!this.listeners[eventName]) {
       throw new Error(`Нет события: ${eventName}`);
     }

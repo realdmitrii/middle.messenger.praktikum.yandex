@@ -1,11 +1,10 @@
-import { userController } from './../../controllers/UserController';
 import './password-change.css';
 import fn from './password-change.hbs';
-import { ValidatedInputs } from '../../core/ValidatedInputs';
-import { router } from '../../core/Router';
-import { customLog } from '../../services/customLog';
-import { store } from '../../core/Store';
-import { PATH } from '../../constants';
+import { ValidatedInputs } from 'core/ValidatedInputs';
+import { store } from 'core/Store';
+import { router } from 'core/Router';
+import { userController } from 'controllers/UserController';
+import { PATH } from 'services/constants';
 
 export class PasswordChangePage extends ValidatedInputs {
   constructor() {
@@ -41,11 +40,9 @@ export class PasswordChangePage extends ValidatedInputs {
   }
 
   render() {
-    customLog(1, this, 'Password change page'); // TODO: удалить
-
     return this.compile(fn, {
       firstModalIsOpen: store.get().modal.first,
-      avatar: `${PATH.baseAvatarURL}${store.get().user.avatar}`,
+      src: `${PATH.baseAvatarURL}${store.get().user.avatar}`,
 
       focus: this.validateInput.bind(this),
       blur: this.validateInput.bind(this),

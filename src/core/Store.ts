@@ -12,7 +12,7 @@ const user: User = {
   phone: ''
 };
 
-const appStateDefault: AppState = {
+export const appStateDefault: AppState = {
   modal: {
     first: false,
     second: false,
@@ -29,7 +29,7 @@ const appStateDefault: AppState = {
   chatUsers: []
 };
 
-class Store extends EventBus {
+export class Store extends EventBus {
   private _appState: AppState = appStateDefault;
 
   set(path: string, value: unknown) {

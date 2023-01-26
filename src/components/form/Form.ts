@@ -1,6 +1,5 @@
 import fn from './form.hbs';
-import { Block } from '../../core/Block';
-import { customLog } from '../../services/customLog';
+import { Block } from 'core/Block';
 
 interface Props {
   class: string;
@@ -20,8 +19,6 @@ export class Form extends Block {
   }
 
   render() {
-    customLog(2, this, 'Form'); // TODO: удалить
-
     return this.compile(fn, { ...this.props });
   }
 }

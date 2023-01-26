@@ -9,9 +9,11 @@ dist
 dist-ssr
 node_modules
 *.local
+.husky
+
 
 # Editor directories and files
-.parcel-cache
+
 .vscode/*
 !.vscode/extensions.json
 .idea

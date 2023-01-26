@@ -15,7 +15,7 @@ export abstract class ValidatedInputs extends Block {
   private _currentInput: HTMLInputElement;
   private _inputName: string | null;
 
-  constructor(args?: any) {
+  constructor() {
     super();
     this._setOfFlags = new Set();
     this.fillSet();
@@ -63,6 +63,10 @@ export abstract class ValidatedInputs extends Block {
       if (this._setOfFlags.delete(this._inputName)) {
         return;
       }
+    }
+
+    if (!this._currentInput) {
+      return;
     }
 
     this._currentInput.value = this._currentInput.value.trim();
